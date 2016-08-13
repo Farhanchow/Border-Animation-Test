@@ -1,3 +1,3 @@
 # Border-Animation-Test
-Border Animation Test using HTML(Jade) and CSS(SCSS)
+Border Animation Test using HTML and CSS
 Demo Link: http://codepen.io/Farhanchow/full/JKxKJW/

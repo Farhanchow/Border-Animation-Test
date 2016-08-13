@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title> Border Animation  Test</title>
+    
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    
+        <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      .bb, .bb::before, .bb::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bb {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  background: url("https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/10341630_1376260812676206_472276618531086879_n.jpg?oh=9988e02ce582359ee172565cee8f296c&oe=5802FE87") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+  color: black;
+  box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.bb::before, .bb::after {
+  content: '';
+  z-index: -1;
+  margin: -5%;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 8s linear infinite;
+}
+.bb::before {
+  animation-delay: -4s;
+}
+.bb:hover::after, .bb:hover::before {
+  background-color: black;
+}
+
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 440px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 440px, 0px);
+  }
+  50% {
+    clip: rect(438px, 440px, 440px, 0px);
+  }
+  75% {
+    clip: rect(0px, 440px, 440px, 438px);
+  }
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background-color: lightgray;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+    </style>
+
+    
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    
+<div class="bb"></div>
+    
+    
+    
+    
+    
+  </body>
+</html>
